@@ -91,7 +91,7 @@ namespace Drawing
 		
 
 		virtual bool	OpenObjFile();
-		virtual bool	ReadObjFile(char* FileName);		//根据文件名填充数据。
+		virtual bool	ReadObjFile(const char* FileName);		//根据文件名填充数据。
 		virtual bool	GetPolyParam(Poly &poly);			//获取多边形所在的平面方程参数
 		virtual void	Transform(Matrix<float>& M);
 		virtual void	OnChar(UINT ch);

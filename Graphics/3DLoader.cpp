@@ -54,7 +54,7 @@ namespace Drawing
 
 		
 	}
-	bool	Model::ReadObjFile(char* FileName){
+	bool	Model::ReadObjFile(const char* FileName){
 		FILE *dataFile;
 		char inputLine[256];
 		
@@ -527,10 +527,12 @@ namespace Drawing
 		if(dlg.DoModal() != IDOK) 
 			return false;   
 		
-		char fname[100];
-		strcpy(fname, dlg.GetPathName());
+		//char fname[100];
+		//strcpy(fname, dlg.GetPathName());
 
-		ReadObjFile(fname) ;
+		std::string fname = (LPCTSTR)dlg.GetPathName();
+
+		ReadObjFile(fname.c_str());
 
 		bFileLoaded = true;
 
